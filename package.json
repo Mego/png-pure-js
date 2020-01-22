@@ -1,0 +1,41 @@
+{
+  "name": "png-pure-js",
+  "version": "1.0.0",
+  "description": "png manipulation library in pure js with no environment dependency",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "repository": "https://github.com/Mego/png-pure-js",
+  "author": "Mego <mega.gamer05@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "browserify": "^16.5.0",
+    "husky": "^4.2.0",
+    "prettier": "^1.19.1",
+    "pretty-quick": "^2.0.1",
+    "tslint": "^6.0.0",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.7.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged --pattern \"**/*.*(js|ts)\""
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json",
+    "prepare": "yarn build",
+    "prepublishOnly": "yarn lint"
+  },
+  "files": [
+    "lib/**/*"
+  ],
+  "dependencies": {
+    "@rgba-image/create-image": "^0.1.1",
+    "@rgba-image/lanczos": "rgba-image/lanczos",
+    "@rgba-image/png": "^0.1.0",
+    "@types/node": "^13.1.8",
+    "@types/pngjs": "^3.4.0"
+  }
+}
